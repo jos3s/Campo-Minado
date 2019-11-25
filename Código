@@ -316,6 +316,7 @@ int main(){
     campominado(dificuldade());
     puts("");
     criar(mt);
+    system("cls");
     imprimir(m,n);
     colocarbombas(m,n);
     jogar(m,n);
