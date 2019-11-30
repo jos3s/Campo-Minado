@@ -1,4 +1,4 @@
-```sh
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -323,4 +323,3 @@ int main(){
     jogar(m,n);
 return 0;
 }
-```
