@@ -7,7 +7,7 @@ int**mt;
 int**mtz;
 int m,n;
 
-void criar(){
+void criar(){  //Cria a matriz a ser exibida
     int i,j;
     mt=(int**)malloc(m*sizeof(int*));
     for(i=0;i<m;i++){
@@ -20,7 +20,7 @@ void criar(){
     }
 }
 
-void imprimir(int m,int n){
+void imprimir(int m,int n){     //Imprime a matriz de visualização
     int i,j;
     for(i=0;i<m;i++){
         for(j=0;j<n;j++){
@@ -30,7 +30,7 @@ void imprimir(int m,int n){
     }
 }
 
-void campominado(int d){
+void campominado(int d){  //Cria a matriz com as bombas e as coloca aleatoriamente 
     int i,j,a;
     mtz=(int**)malloc(m*sizeof(int*));
     for(i=0;i<m;i++){
@@ -58,7 +58,7 @@ void imprimircampo(int m,int n){
     }
 }
 
-int dificuldade(){
+int dificuldade(){     //Pega a dificuldade para o campo minado
     int d;
     printf("Digite a dificuldade (entre 2 a 8):");
     printf("\n 2-Dificil\n 3 \n 4\n 5-Médio\n 6\n 7\n 8-Fácil\n");
@@ -66,7 +66,7 @@ int dificuldade(){
     return d;
 }
 
-int colocarbombas(int m, int n){
+int colocarbombas(int m, int n){    //Conta as bombas ao redor de uma determinada posição na matriz
     int i,j,cont=0;
     for(i=0;i<m;i++){
         for(j=0;j<n;j++){
@@ -75,61 +75,50 @@ int colocarbombas(int m, int n){
                     cont++;
                 if(mtz[0][1]==42)
                     cont++;
-            }
-            else if(i==0 && j<n-1){
+            }else if(i==0 && j<n-1){
                 if(mtz[0][j-1]==42)
                     cont++;
                 if(mtz[0][j+1]==42)
                     cont++;
                 if(mtz[1][j]==42)
                     cont++;
-            }
-            else if(i==0 && j==n-1){
+            }else if(i==0 && j==n-1){
                 if(mtz[0][n-2]==42)
                     cont++;
                 if(mtz[1][n-1]==42)
                     cont++;
-            }
-
-            else if(i<m-1 && j==0){
+            }else if(i<m-1 && j==0){
                 if(mtz[i-1][0]==42)
                     cont++;
                 if(mtz[i+1][0]==42)
                     cont++;
                 if(mtz[i][1]==42)
                     cont++;
-            }
-            else if(i<m-1 && j==m-1){
+            }else if(i<m-1 && j==m-1){
                 if(mtz[i-1][n-1]==42)
                     cont++;
                 if(mtz[i+1][n-1]==42)
                     cont++;
                 if(mtz[i][n-2]==42)
                     cont++;
-            }
-
-            else if(i==m-1 && j==0){
+            }else if(i==m-1 && j==0){
                 if(mtz[m-2][0]==42)
                     cont++;
                 if(mtz[m-2][1]==42)
                     cont++;
-            }
-            else if(i==m-1 && j<n-1){
+            }else if(i==m-1 && j<n-1){
                  if(mtz[m-1][j+1]==42)
                     cont++;
                 if(mtz[m-1][j-1]==42)
                     cont++;
                 if(mtz[m-2][j]==42)
                     cont++;
-            }
-            else if(i==m-1 && j==n-1){
+            }else if(i==m-1 && j==n-1){
                 if(mtz[m-2][n-1]==42)
                     cont++;
                 if(mtz[m-2][n-2]==42)
                     cont++;
-            }
-
-            else{
+            }else{
                 if(mtz[i-1][j]==42)
                    cont++;
                 if(mtz[i+1][j]==42)
@@ -138,8 +127,6 @@ int colocarbombas(int m, int n){
                     cont++;
                 if(mtz[i][j+1]==42)
                     cont++;
-
-
             }
 
             if(mtz[i][j]!=42){
@@ -150,7 +137,7 @@ int colocarbombas(int m, int n){
     }
 }
 
-void imprimirbombas(int m,int n){
+void imprimirbombas(int m,int n){   //Imprime a matriz que recebeu as bombas
     int i,j;
     for(i=0;i<m;i++){
         for(j=0;j<n;j++){
@@ -160,9 +147,9 @@ void imprimirbombas(int m,int n){
     }
 }
 
-void jogar(int m,int n){
+void jogar(int m,int n){    //Função na qual vai acontecer o jogo
     int a;
-    a=bombas(m,n);
+    a=bombas(m,n);     //Chama a função para saber se você acertou ou não uma bomba
     if(a==0){
         jogar(m,n);
     }else{
@@ -295,7 +282,7 @@ int bombas(int m, int n){
     }
 }
 
-void imprimireal(int m, int n,int l,int c){
+void imprimireal(int m, int n,int l,int c){ 
     int i,j;
     for(i=0;i<m;i++){
         for(j=0;j<n;j++){

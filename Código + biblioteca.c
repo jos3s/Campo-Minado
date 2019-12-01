@@ -5,6 +5,7 @@
 #include "campominado.h"
 
 int main(){
+
     setlocale(LC_ALL,"");
     puts("Digite as dimensões do campo minado:");
     scanf("%d %d",&m,&n);
@@ -16,5 +17,6 @@ int main(){
     imprimir(m,n);
     colocarbombas(m,n);
     jogar(m,n);
+
 return 0;
 }
