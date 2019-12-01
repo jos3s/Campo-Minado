@@ -11,3 +11,8 @@ Essa função aloca a matriz que vai servir de matriz secundária, onde será fe
 Dificuldade - dificuldade().
 
 É uma função void que que pegar um valor digitado pelo usuário entre 2 a 8 e categoriza esses valores em níveis (2 - Díficil e 8 - Fácil).
+
+Criar  - criar ()
+
+Função void, que aloca dinamicamente uma matriz global utilizando os valores de linhas e colunas também globais, que são definidos dentro do main do código.
+
